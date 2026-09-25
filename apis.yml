@@ -1,23 +1,63 @@
 aid: angkunvision
+
 name: Angkunvision
-description: 'Angkunvision is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Angkunvision is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as
+  a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/angkunvision/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/angkunvision-hosts.yml
+- type: Vendors
+  url: vendors/angkunvision-vendors.yml
+- type: DomainSecurity
+  url: security/angkunvision-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/angkunvision
+
+apis:
+- name: Ak Optics API
+  description: Leading Technology in Semiconductor Optical Inspection and Metro
+  humanURL: https://www.akoptics.com/en/about/about-us
+  aid: angkunvision:ak-optics-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Company website requires JavaScript rendering and no machine-readable API spec was found.
+  evidence:
+  - url: https://www.akoptics.com/en/developer/api
+    status: 404
+  - url: https://www.akoptics.com/openapi.json
+    status: 404
+  checked: 2026-09-24
+x-enrichment:
+  date: '2026-09-24'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
